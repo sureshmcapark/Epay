@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="JpaEpayment" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>com.dnt.epay.entities.EpayEdiFile</class>
+		<class>com.dnt.epay.entities.EpayFpxExchange</class>
+		<class>com.dnt.epay.entities.EpayFpxSeller</class>
+		<class>com.dnt.epay.entities.EpayFpxTransaction</class>
+		<class>com.dnt.epay.entities.EpayPaymentDetail</class>
+		<class>com.dnt.epay.entities.EpayPaymentHeader</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@172.26.2.151:1521:DEVDB01" />
+			<property name="javax.persistence.jdbc.user" value="EPAYMENT" />
+			<property name="javax.persistence.jdbc.password" value="EPAYMENT" />
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
+		    <property name="javax.persistence.jdbc.show_sql" value="true" />
+			<property name="eclipselink.logging.level" value="FINE"/>
+			<property name="eclipselink.logging.parameters" value="true"/>
+			<property name="eclipselink.ddl-generation" value="create-tables"/>
+			<property name="eclipselink.ddl-generation.output-mode" value="database" />
+		</properties>
+	</persistence-unit>
+</persistence>
